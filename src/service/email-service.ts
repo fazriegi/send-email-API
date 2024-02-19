@@ -6,7 +6,6 @@ import { ISendEmail } from "../models/email";
 
 export class EmailService {
   async SendEmail(props: ISendEmail): Promise<boolean> {
-    console.log(props);
     const attachments: Attachment[] = [];
     const transporter = nodemailer.createTransport({
       host: SMTP_CONFIG.smtp_host,
