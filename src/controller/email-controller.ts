@@ -4,7 +4,10 @@ import { sendEmailScheme } from "../validation/email";
 
 export class EmailController {
   async SendEmail(req: Request, res: Response): Promise<Response> {
-    const validated = sendEmailScheme.safeParse(req.body);
+    const validated = sendEmailScheme.safeParse({
+      ...req.body,
+      attachments: req.files,
+    });
 
     if (!validated.success) {
       return res.status(400).send({

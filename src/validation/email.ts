@@ -7,4 +7,5 @@ export const sendEmailScheme = z.object({
   subject: z.string(),
   bodyText: z.string().optional(),
   bodyHtml: z.string().optional(),
+  attachments: z.array(z.any()).optional(),
 });
