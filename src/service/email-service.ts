@@ -11,7 +11,6 @@ export class EmailService {
     const transporter = nodemailer.createTransport({
       host: SMTP_CONFIG.smtp_host,
       port: Number(SMTP_CONFIG.smtp_port),
-      secure: true,
       auth: {
         user: SMTP_CONFIG.smtp_user,
         pass: SMTP_CONFIG.smtp_password,
