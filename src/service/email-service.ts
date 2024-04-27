@@ -31,12 +31,11 @@ export class EmailService {
 
     try {
       const info = await transporter.sendMail({
-        from: SMTP_CONFIG.smtp_user,
+        from: props.from,
         to: props.to,
         cc: props.cc,
         bcc: props.bcc,
         subject: props.subject,
-        text: props.bodyText,
         html: props.bodyHtml,
         attachments,
       });
