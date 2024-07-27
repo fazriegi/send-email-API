@@ -10,7 +10,7 @@ export class EmailController {
     });
 
     if (!validated.success) {
-      return res.status(400).send({
+      return res.status(422).send({
         message: "Request validation error",
         data: validated.error.flatten().fieldErrors,
       });
